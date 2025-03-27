@@ -1,0 +1,25 @@
+#사용할 docker network 생성 , public-net, private-net
+docker network create public-net
+docker network create private-net
+
+#docker-compose.yml 작성
+#ssh-server.Dockerfile 작성
+
+#도커 컴포즈, bastion서버 컨테이너, fastapi private 컨테이너 생성
+docker compose up -d
+
+#CMD -> 우분투 서버 접속 시도 
+ssh -p 2222 root@localhost
+
+#rootpassword 입력
+#우분투 서버 접속
+
+#curl 없으니 설치
+apt install curl
+curl --version
+
+#private-net 접속, 포트 8000
+curl http://private1:8000
+
+#fastapi 접속성공시
+"Hello World"
