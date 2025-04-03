@@ -1,0 +1,10 @@
+{
+    "name": "main-service",
+    "version": "1.0.0",
+    "description": "Main service for routing to other services",
+    "main": "app.js",
+    "dependencies": {
+      "express": "^4.17.1"
+    }
+  }
+  

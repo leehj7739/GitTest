@@ -1,0 +1,16 @@
+{
+    "name": "news-service",
+    "version": "1.0.0",
+    "description": "News service for crawling Naver IT news",
+    "type": "module",   
+    "main": "app.js",
+    "dependencies": {
+      "cheerio": "^1.0.0-rc.10",
+      "express": "^4.17.1",
+      "node-fetch": "^3.2.0" 
+    },
+    "scripts": {
+      "start": "node app.js"
+    }
+  }
+  

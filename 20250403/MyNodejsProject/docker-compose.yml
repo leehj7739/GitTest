@@ -1,0 +1,62 @@
+services:
+  main-service:
+    build:
+      context: ./main-service
+    container_name: main-service
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  lunch-service:
+    build:
+      context: ./lunch-service
+    container_name: lunch-service
+    ports:
+      - "3001:3000"
+    networks:
+      - app-network
+
+  news-service:
+    build:
+      context: ./news-service
+    container_name: news-service
+    ports:
+      - "3002:3000"
+    networks:
+      - app-network
+
+  monitoring-service:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - app-network
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3003:3000"  # 포트 변경
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"  # 80번 포트 대신 8080번 포트로 변경
+    depends_on:
+      - main-service
+      - lunch-service
+      - news-service
+      - monitoring-service
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
