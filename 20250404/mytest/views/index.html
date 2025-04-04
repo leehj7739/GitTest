@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블로그 검색</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <h1>네이버 블로그 검색</h1>
+  <form id="searchForm">
+    <input type="text" id="query" placeholder="검색어를 입력하세요" required>
+    <button type="submit">검색</button>
+  </form>
+
+  <div id="results"></div>
+
+  <script>
+    const form = document.getElementById('searchForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const query = document.getElementById('query').value;
+      fetch(`/search/blog?query=${query}`)
+        .then(response => response.json())
+        .then(data => {
+          let resultsHtml = '<h2>검색 결과</h2>';
+          data.items.forEach(item => {
+            resultsHtml += `
+              <div class="result">
+                <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                <p>${item.description}</p>
+                <small>작성자: <a href="https://blog.naver.com/${item.bloggerlink}" target="_blank">${item.bloggername}</a> | 날짜: ${item.postdate}</small>
+              </div>
+            `;
+          });
+          document.getElementById('results').innerHTML = resultsHtml;
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>

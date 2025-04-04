@@ -1,0 +1,17 @@
+{
+    "name": "naver-search-app",
+    "version": "1.0.0",
+    "description": "Naver Blog Search API with Express",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "request": "^2.88.2",
+      "path": "^0.12.7"
+    },
+    "author": "Your Name",
+    "license": "ISC"
+  }
+  
