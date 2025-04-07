@@ -1,0 +1,51 @@
+# App 서버 Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  selector:
+    matchLabels:
+      app: app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      # DB 서버가 준비될 때까지 대기하는 initContainer
+      initContainers:
+      - name: wait-for-db
+        image: busybox:1.28
+        command: ['sh', '-c', 'until nc -z db 3306; do echo waiting for db; sleep 2; done;']
+      containers:
+      - name: app
+        image: leekyz/2tier-app:latest
+        env:
+        - name: NODE_ENV
+          value: production
+        - name: DB_HOST
+          value: db
+        - name: DB_USER
+          value: nodeuser
+        - name: DB_PASSWORD
+          value: password123
+        - name: DB_NAME
+          value: nodeapp
+        ports:
+        - containerPort: 3000
+---
+# App 서버 Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+spec:
+  selector:
+    app: app
+  ports:
+  - port: 80
+    targetPort: 3000
+  type: NodePort
+
+

@@ -1,0 +1,21 @@
+$base64EncodedPassword = kubectl get secret -n monitoring loki-stack-grafana -o jsonpath="{.data.admin-password}"
+
+# Base64 디코딩
+$decodedBytes = [Convert]::FromBase64String($base64EncodedPassword)
+
+# 바이트 배열을 문자열로 변환
+$decodedPassword = [System.Text.Encoding]::UTF8.GetString($decodedBytes)
+
+# 디코딩된 비밀번호 출력	
+$decodedPassword
+
+
+# 파워쉘에서 백그라운드 실행
+Start-Process "minikube" "service app -n two-tier-app"
+
+#init컨테이너 
+=> 특수상황에 행위 규정
+ex) db 서버 작동전에 app서버가 연결시도할경우 실패 -> db서버 작동시까지 대기
+
+#롤아웃 리스타트 => yaml 파일 변경시 등. 변경 내용 deploy
+kubectl rollout restart deployment app -n two-tier-app
