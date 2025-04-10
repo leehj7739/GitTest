@@ -1,0 +1,119 @@
+/* src/App.css */
+.App {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .App-header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: #343a40;
+    margin-top: 0;
+  }
+  
+  .server-info {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .server-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .server-info p {
+    margin: 5px 0;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+  
+  section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0069d9;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  th {
+    background-color: #e9ecef;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    padding: 10px;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      grid-template-columns: 1fr;
+    }
+  }

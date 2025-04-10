@@ -1,0 +1,18 @@
+pods=$(kubectl get pods --selector=job-name=hello-cron-29067952 --output=jsonpath={.items[*].metadata.name})
+kubectl logs $pods
+
+
+
+# Pod 이름을 변수에 저장
+$pods = kubectl get pods --selector=job-name=hello-cron-29067952 --output=jsonpath='{.items[0].metadata.name}'
+
+# Pod 이름 확인
+echo $pods
+
+# 로그 확인
+kubectl logs $pods
+
+# cronjob pod가 terminate 되기 전에 로그를 확인해야 확인가능...
+kubectl logs $(kubectl get pods --selector=job-name=hello-cron-29067957 --output=jsonpath='{.items[0].metadata.name}')
+
+

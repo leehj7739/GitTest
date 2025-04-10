@@ -1,0 +1,25 @@
+# 사이드카 패턴을 사용한 Pod 생성
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sidecar-pod
+  labels:
+    app: web-app
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.19
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: shared-logs
+      mountPath: /var/log/nginx
+  - name: log-collector
+    image: busybox:1.28
+    command: ["/bin/sh", "-c", "while true; do date -u +'%Y-%m-%d %H:%M:%S UTC: 로그 수집 중...' >> /var/log/nginx/collector.log; sleep 10; done"]
+    volumeMounts:
+    - name: shared-logs
+      mountPath: /var/log/nginx
+  volumes:
+  - name: shared-logs
+    emptyDir: {}

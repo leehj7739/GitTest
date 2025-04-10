@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd-logger
+  labels:
+    app: fluentd-logger
+spec:
+  selector:
+    matchLabels:
+      name: fluentd-logger
+  template:
+    metadata:
+      labels:
+        name: fluentd-logger
+    spec:
+      containers:
+      - name: fluentd-logger
+        image: fluent/fluentd:v1.16
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi

@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql-slave
+spec:
+  serviceName: "mysql-slave"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-slave
+  template:
+    metadata:
+      labels:
+        app: mysql-slave
+    spec:
+      initContainers:
+        - name: init-slave
+          image: mysql:5.7
+          command:
+            - "/bin/bash"
+            - "-c"
+            - |
+              # ConfigMap에서 복사한 후 실행 권한 부여
+              cp /scripts/init-slave.sh /tmp/init-slave.sh
+              chmod +x /tmp/init-slave.sh
+              /tmp/init-slave.sh
+          volumeMounts:
+            - name: mysql-scripts
+              mountPath: /scripts  # ConfigMap의 init-slave.sh를 이 경로에 마운트
+            - name: tmp-scripts
+              mountPath: /tmp    # 실행 권한을 부여하고 실행할 임시 디렉토리
+      containers:
+        - name: mysql-slave
+          image: mysql:5.7
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "rootpassword"
+            - name: MYSQL_MASTER_HOST
+              value: "mysql-master"  # 마스터 서비스 이름
+            - name: MYSQL_MASTER_PORT
+              value: "3306"          # 마스터 포트
+            - name: MYSQL_SLAVE
+              value: "yes"           # 슬레이브 모드
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-pvc
+              mountPath: /var/lib/mysql
+          livenessProbe:
+            exec:
+              command:
+                - "mysqladmin"
+                - "-uroot"
+                - "-prootpassword"
+                - "ping"
+            initialDelaySeconds: 30
+            periodSeconds: 60
+          readinessProbe:
+            exec:
+              command:
+                - "mysqladmin"
+                - "-uroot"
+                - "-prootpassword"
+                - "ping"
+            initialDelaySeconds: 30
+            periodSeconds: 60
+      volumes:
+        - name: mysql-scripts
+          configMap:
+            name: mysql-slave-init-scripts  # 위에서 생성한 ConfigMap을 참조
+        - name: tmp-scripts
+          emptyDir: {}  # 임시 디렉토리
+  volumeClaimTemplates:
+    - metadata:
+        name: mysql-pvc
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi

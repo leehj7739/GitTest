@@ -1,0 +1,12 @@
+# Service 생성 (Deployment와 연결)
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx-app
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort

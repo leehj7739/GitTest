@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-slave-init-scripts
+data:
+  init-slave.sh: |
+    #!/bin/bash
+    MASTER_HOST=$MYSQL_MASTER_HOST
+    MASTER_PORT=$MYSQL_MASTER_PORT
+    MASTER_USER="root"
+    MASTER_PASSWORD="rootpassword"
+    
+    SLAVE_USER="replica_user"
+    SLAVE_PASSWORD="replica_password"
+
+    mysql -u root -p$MYSQL_ROOT_PASSWORD -e "
+      CHANGE MASTER TO
+        MASTER_HOST='$MASTER_HOST',
+        MASTER_PORT=$MASTER_PORT,
+        MASTER_USER='$SLAVE_USER',
+        MASTER_PASSWORD='$SLAVE_PASSWORD',
+        MASTER_LOG_FILE='mysql-bin.000001',
+        MASTER_LOG_POS=107;
+      START SLAVE;
+    "

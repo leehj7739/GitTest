@@ -19,3 +19,6 @@ ex) db 서버 작동전에 app서버가 연결시도할경우 실패 -> db서버
 
 #롤아웃 리스타트 => yaml 파일 변경시 등. 변경 내용 deploy
 kubectl rollout restart deployment app -n two-tier-app
+
+#윈도우 경로 이슈,.,
+kubectl patch service nginx-service -p '{\"spec\":{\"selector\":{\"app\":\"nginx-app-green\"}}}'
