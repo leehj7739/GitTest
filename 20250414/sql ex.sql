@@ -244,7 +244,7 @@ use sakila;
 -- - **힌트:**
 --     - MAX(rental_date)와 날짜 비교 함수 활용
 
-select  c.customer_id, c.first_name, c.last_name, MAX(r.rental_date) as last_rental_date
+select  c.customer_id, c.first_name, c.last_name, MAX(r.rental_date) as last_rental_date , timestampdiff(MONTH, MAX(r.rental_date) ,date('2006-06-01')) as left_rental_month
 from customer as c
 join rental  as r
 on  r.customer_id = c.customer_id
@@ -254,15 +254,12 @@ order by c.customer_id
 ;
 
 
--- select  c.customer_id, c.first_name, c.last_name, MAX(r.rental_date) as last_rental_date
--- from customer as c
--- join rental  as r
--- on  r.customer_id = c.customer_id
--- group by c.customer_id
--- having timestampdiff(MONTH, MAX(r.rental_date) ,NOW()) > 6 
--- order by c.customer_id
--- ;
-
-
-
+select  c.customer_id, c.first_name, c.last_name, MAX(r.rental_date) as last_rental_date, timestampdiff(MONTH, MAX(r.rental_date) ,NOW()) as left_rental_month
+from customer as c
+join rental  as r
+on  r.customer_id = c.customer_id
+group by c.customer_id
+having timestampdiff(MONTH, MAX(r.rental_date) ,NOW()) > 6 
+order by c.customer_id
+;
 
