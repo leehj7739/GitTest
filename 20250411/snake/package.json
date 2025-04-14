@@ -1,12 +1,11 @@
 {
-    "name": "frontend-app",
-    "version": "0.1.0",
-    "private": true,
+    "name": "snake-game",
+    "version": "1.0.0",
+    "main": "src/index.js",
     "dependencies": {
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
-      "react-scripts": "5.0.1",
-      "web-vitals": "^2.1.4"
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "react-scripts": "^5.0.0"
     },
     "scripts": {
       "start": "react-scripts start",
@@ -33,3 +32,4 @@
       ]
     }
   }
+  

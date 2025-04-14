@@ -9,7 +9,7 @@ function App() {
   const [newUser, setNewUser] = useState({ username: '', email: '' });
 
   // API의 기본 URL - 환경 변수에서 가져오거나 기본값 사용
-  const API_URL = process.env.REACT_APP_API_URL || '/lkz/api';
+  const API_URL = process.env.REACT_APP_API_URL || '/api';
 
   // 사용자 목록 불러오기
   const fetchUsers = async () => {

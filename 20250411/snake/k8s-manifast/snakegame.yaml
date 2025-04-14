@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snake-game
+  namespace: lkz
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: snake-game
+  template:
+    metadata:
+      labels:
+        app: snake-game
+    spec:
+      containers:
+        - name: snake-game
+          image: leekyz/snakegame:latest
+          ports:
+            - containerPort: 100
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: snake-game-service
+  namespace: lkz
+spec:
+  type: LoadBalancer  # 또는 NodePort (로컬에서는 NodePort 추천)
+  selector:
+    app: snake-game
+  ports:
+    - port: 100
+      targetPort: 100

@@ -1,0 +1,55 @@
+# sakiladb 이미지 pull & 실행
+docker run -p 3306:3306 -d sakiladb/mysql:latest
+# sakiladb 컨네이터 접속속
+docker exec -it 67c557a3697c74ea30334b4fd2acee2fa4db5a740ec78b1ae343ccdbbbede3fa bash
+
+#db 사용자 로그인
+mysql -u sakila -p
+
+#
+mysql> SELECT * FROM  FILES;
+ERROR 1046 (3D000): No database selected
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+# 
+mysql> USE sakila;
+
+mysql> show tables;
++----------------------------+
+| Tables_in_sakila           |
++----------------------------+
+| actor                      |
+| actor_info                 |
+| address                    |
+| category                   |
+| city                       |
+| country                    |
+| customer                   |
+| customer_list              |
+| film                       |
+| film_actor                 |
+| film_category              |
+| film_list                  |
+| film_text                  |
+| inventory                  |
+| language                   |
+| nicer_but_slower_film_list |
+| payment                    |
+| rental                     |
+| sales_by_film_category     |
+| sales_by_store             |
+| staff                      |
+| staff_list                 |
+| store                      |
++----------------------------+
+23 rows in set (0.00 sec)
