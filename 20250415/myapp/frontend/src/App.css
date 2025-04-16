@@ -1,0 +1,435 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.feature-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  min-width: 200px;
+  margin: 0 10px;
+}
+
+.search-box {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.search-box input {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  min-width: 300px;
+}
+
+.category-selector {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #333;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* 배우 이미지 관련 스타일 */
+.actors-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.actor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  margin: 10px;
+}
+
+.actor-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.actor-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.actor-name {
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: center;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  select, .search-box input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .actor-card {
+    width: 70px;
+  }
+
+  .actor-image, .actor-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.movie-poster {
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.poster-container,
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.cache-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  backdrop-filter: blur(2px);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cache-icon {
+  font-size: 13px;
+}
+
+.cache-text {
+  font-weight: bold;
+}
+
+.cache-time {
+  font-size: 9px;
+  opacity: 0.9;
+}
+
+.poster-image.cached,
+.actor-image.cached {
+  border: 2px solid #28a745;
+  position: relative;
+}
+
+.poster-image.cached:hover,
+.actor-image.cached:hover {
+  border-color: #218838;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.poster-image,
+.actor-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.poster-image:hover,
+.actor-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-title {
+  margin-top: 5px;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.no-poster {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  color: #666;
+  font-size: 14px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+.tmdb-search {
+  margin: 20px 0;
+}
+
+.tmdb-search .search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tmdb-search input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.tmdb-search button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tmdb-search button:hover {
+  background-color: #0056b3;
+}
+
+.tmdb-search button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.movie-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card .poster-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.movie-info .release-date {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.movie-info .overview {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.movie-info button {
+  width: 100%;
+  padding: 8px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.movie-info button:hover {
+  background-color: #218838;
+}
+
+.movie-info button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.backup-button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.backup-button:hover {
+  background-color: #218838;
+}
+
+.backup-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.backup-status {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.backup-status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.backup-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.backup-file {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+} 

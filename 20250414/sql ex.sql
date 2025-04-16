@@ -263,3 +263,55 @@ having timestampdiff(MONTH, MAX(r.rental_date) ,NOW()) > 6
 order by c.customer_id
 ;
 
+
+-- 2일차
+
+-- inner join
+select 
+	f.film_id,
+    f.title,
+    a.actor_id,
+    a.first_name,
+    a.last_name
+from film f
+inner join film_actor fa on f.film_id = fa.film_id
+inner join actor a on a.actor_id = fa.actor_id
+order by f.film_id , a.actor_id
+;
+
+-- left join
+select
+	c.customer_id,
+    c.first_name as customer_name,
+    c.email as customer_email,
+    stf.first_name as staff_name,
+    stf.email as staff_email
+    
+from customer as c
+left join staff as stf
+on stf.email = c.email
+;
+
+-- right join
+select 
+	a.address_id,
+    a.address,
+	s.store_id,
+    s.manager_staff_id
+from store s
+right join address a on a.address_id = s.address_id
+order by a.address_id
+;
+
+-- croess join
+select 
+	f.film_id,
+    f.title,
+    l.language_id,
+    l.name as language
+from film f
+cross join language l
+limit 10
+;
+
+

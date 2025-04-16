@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # MySQL Sakila DB
+  db:
+    image: sakiladb/mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: sakila
+      MYSQL_USER: sakila
+      MYSQL_PASSWORD: p_ssW0rd
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # Backend API 서버
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=db
+      - DB_USER=sakila
+      - DB_PASSWORD=p_ssW0rd
+      - DB_NAME=sakila
+      - DB_PORT=3306
+    depends_on:
+      - db
+
+  # Frontend React 앱
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3000
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data: 
