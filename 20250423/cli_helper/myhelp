@@ -25,10 +25,6 @@ ERR_LOG="${LOG_DIR}/myhelp_error.log"
 [ ! -f "$OUT_LOG" ] && touch "$OUT_LOG"
 [ ! -f "$ERR_LOG" ] && touch "$ERR_LOG"
 
-# OpenAI API 키 설정
-if [ -z "${OPENAI_API_KEY}" ]; then
-    OPENAI_API_KEY="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"
-fi
 
 # API 키 확인
 if [ -z "${OPENAI_API_KEY}" ]; then
