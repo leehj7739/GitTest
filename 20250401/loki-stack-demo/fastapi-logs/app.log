@@ -1,0 +1,24 @@
+2025-04-01 10:43:09,000 - fastapi-app - INFO - Request started: GET /
+2025-04-01 10:43:09,000 - fastapi-app - INFO - Root endpoint called
+2025-04-01 10:43:09,001 - fastapi-app - INFO - Request completed: GET / - Took: 0.0013s
+2025-04-01 10:43:09,161 - fastapi-app - INFO - Request started: GET /favicon.ico
+2025-04-01 10:43:09,162 - fastapi-app - INFO - Request completed: GET /favicon.ico - Took: 0.0007s
+2025-04-01 10:43:18,437 - fastapi-app - INFO - Request started: GET /foodRec
+2025-04-01 10:43:18,437 - fastapi-app - INFO - Food recommendation result: 1
+2025-04-01 10:43:18,437 - fastapi-app - INFO - Request completed: GET /foodRec - Took: 0.0009s
+2025-04-01 10:43:18,442 - fastapi-app - INFO - Request started: GET /pizza
+2025-04-01 10:43:18,442 - fastapi-app - INFO - Food recommendation result: pizza 
+2025-04-01 10:43:18,458 - fastapi-app - INFO - Request completed: GET /pizza - Took: 0.0167s
+2025-04-01 10:43:30,209 - fastapi-app - INFO - Request started: GET /foodRec
+2025-04-01 10:43:30,209 - fastapi-app - INFO - Food recommendation result: 0
+2025-04-01 10:43:30,210 - fastapi-app - INFO - Request completed: GET /foodRec - Took: 0.0009s
+2025-04-01 10:43:30,215 - fastapi-app - INFO - Request started: GET /chicken
+2025-04-01 10:43:30,215 - fastapi-app - INFO - Food recommendation result: chicken 
+2025-04-01 10:43:30,216 - fastapi-app - INFO - Request completed: GET /chicken - Took: 0.0015s
+2025-04-01 10:43:32,814 - fastapi-app - INFO - Request started: GET /3000
+2025-04-01 10:43:32,814 - fastapi-app - INFO - Request completed: GET /3000 - Took: 0.0007s
+2025-04-01 10:45:25,561 - fastapi-app - INFO - Request started: GET /asd
+2025-04-01 10:45:25,562 - fastapi-app - INFO - Request completed: GET /asd - Took: 0.0007s
+2025-04-01 10:48:02,148 - fastapi-app - INFO - Request started: GET /
+2025-04-01 10:48:02,149 - fastapi-app - INFO - Root endpoint called
+2025-04-01 10:48:02,149 - fastapi-app - INFO - Request completed: GET / - Took: 0.0012s
