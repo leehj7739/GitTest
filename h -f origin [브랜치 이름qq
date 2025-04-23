@@ -1,0 +1,168 @@
+[33mcommit bc37eed24e3b378603d3c09086ba63b19b83bbe5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Thu Apr 17 17:43:13 2025 +0900
+
+    20250417
+
+[33mcommit 98f58cb32d52be535908de1021e70d2c5f6f8728[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Wed Apr 16 17:53:27 2025 +0900
+
+    20250416
+
+[33mcommit d28b432cf88f5e7506d8b075fec57768d14bbcdf[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Apr 14 17:51:27 2025 +0900
+
+    20250414
+
+[33mcommit 6455746cdbbc93087381d9508afdb7d06db0570e[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Apr 14 16:23:30 2025 +0900
+
+    20250414
+
+[33mcommit a14ee8fafe613330190beb3bdd7429bad04bbc16[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Apr 14 16:22:29 2025 +0900
+
+    20250414
+
+[33mcommit 069375dd2fd68c8a743b1c8f9d435b6fdb16b087[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Thu Apr 10 18:02:40 2025 +0900
+
+    20250410
+
+[33mcommit a9974e915e2b781df99032f7aaa2a01ee497460c[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Apr 7 17:57:13 2025 +0900
+
+    20250407
+
+[33mcommit 43e8005a040debbe80894a12d1cb8866586adea3[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Fri Apr 4 17:23:43 2025 +0900
+
+    20250404
+
+[33mcommit f2c01afc34a047818b4afcd3e138ba8234639ac6[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Fri Apr 4 08:49:05 2025 +0900
+
+    20250403
+
+[33mcommit 9c65637d1465f0fed7b2ef950981bf1cbe7a8e99[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Wed Apr 2 17:06:36 2025 +0900
+
+    20250402_prom+grapana
+
+[33mcommit 0632e6042ec2429e0e5e7350f0a8c6c586bf3a94[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Tue Apr 1 18:00:12 2025 +0900
+
+    logging, monitoring example
+
+[33mcommit c4f7263d477c3c69657328fc9bcfff7af69874f5[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Tue Apr 1 08:45:21 2025 +0900
+
+    깃 업데이트
+
+[33mcommit be25d09465134483dc3cae7bfbec17ba3a105ee8[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Thu Mar 27 17:19:12 2025 +0900
+
+    20250327_bastion서버 실습
+
+[33mcommit 89544720f23e747d5fa186e5525f422b5cdbaff8[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Wed Mar 26 17:04:39 2025 +0900
+
+    1차 수정
+
+[33mcommit 15c0ca2e68adf0cc69f03a04935746182347ba14[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Wed Mar 26 17:00:23 2025 +0900
+
+    20250326과제 업로드
+
+[33mcommit e2d52202bc2b63a31572846c6e818b509cdc12b6[m
+Merge: 51a9f6a 25e597f
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Wed Mar 26 15:42:10 2025 +0900
+
+    Merge branch 'main' of https://github.com/leehj7739/GitTest
+
+[33mcommit 51a9f6afb32fcbc568a2f96a9021b0ad11d35cd8[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Wed Mar 26 15:40:44 2025 +0900
+
+    과제 1번 업로드
+
+[33mcommit 25e597f1775f0851144a044de65770ff7fa1f79a[m
+Author: Lee HeeJun <leehj7739@gmail.com>
+Date:   Tue Mar 25 12:50:54 2025 +0900
+
+    Delete fastapi/__pycache__ directory
+
+[33mcommit ae72093db98adcb5cdac926fdffc382c059dde6c[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Tue Mar 25 12:49:12 2025 +0900
+
+    ignore test
+
+[33mcommit 471ed71c7172d8260fd24fd828ea6130a768e81f[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Tue Mar 25 12:47:42 2025 +0900
+
+    gitignore test
+
+[33mcommit dde474c42228c8503a5bf3b584a5a20a74a9053e[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Tue Mar 25 12:46:27 2025 +0900
+
+    도커 fastapi
+
+[33mcommit b8bddb0ed66c7ef757b19ad8810d884bba7df94a[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Mar 24 17:39:13 2025 +0900
+
+    asd
+
+[33mcommit a071cbbe7454dfe952cec702f25161e25ef7fcef[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Mar 24 15:38:06 2025 +0900
+
+    4commit
+
+[33mcommit c86ac6af30831a7e0cadc2fc5aedbb7eae2e79ff[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Mar 24 15:02:48 2025 +0900
+
+    test3 commit
+
+[33mcommit 96850fcb66108e0e31f907d079272cd2f840d257[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Mar 24 14:44:08 2025 +0900
+
+    두번째커밋
+
+[33mcommit 43120f1a50a14295ffb9ac01893e7e8a42f90cd1[m
+Author: heejoon lee <leehj7739@gmail.com>
+Date:   Mon Mar 24 14:40:37 2025 +0900
+
+    첫번째커밋
+
+[33mcommit b96eb0b88b06063d2e4e69adecbdf8ac5ce76eaf[m
+Author: testUser <testEmail@gmail.com>
+Date:   Mon Mar 24 14:29:09 2025 +0900
+
+    두번째 커밋
+
+[33mcommit 8b8d5d93b8483d6c923379c90b7b8654d7ae9ec0[m
+Author: testUser <testEmail@gmail.com>
+Date:   Mon Mar 24 14:28:20 2025 +0900
+
+    첫번째 커밋
